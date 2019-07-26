@@ -1,22 +1,26 @@
 package bulkping;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 public class BulkPingGUI{
   
-    JFrame bulkPingFrame; 
+    JFrame bulkPingFrame;
+    ArrayList<JButton> ipButtons;
 
     public void openFrame() {
         this.bulkPingFrame.setVisible(true);
     }
 
-    public void setupFrame() {
+    public void setupFrame(ArrayList<String> ipAddresses) {
         this.bulkPingFrame = new JFrame("BulkPing");
 
         JMenuBar menuBar;
         JMenu menu;
         JMenuItem menuItem;
+        JPanel panel;
 
 
         menuBar = new JMenuBar();
@@ -38,12 +42,21 @@ public class BulkPingGUI{
 
         bulkPingFrame.setJMenuBar(menuBar);
 
+        panel = new JPanel();
+
+        for (String ipAddress : ipAddresses) {
+            ipButtons.add(new JButton(ipAddress));
+            panel.add(ipButtons.get(ipButtons.size()-1));
+        }
+        bulkPingFrame.setContentPane(panel);
+
         bulkPingFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         bulkPingFrame.setSize(960,540);
     }
 
-    BulkPingGUI () {
-      this.setupFrame();
+    BulkPingGUI (ArrayList<String> ipAddresses) {
+        ipButtons = new ArrayList<JButton>();
+        this.setupFrame(ipAddresses);
     }
 
 }

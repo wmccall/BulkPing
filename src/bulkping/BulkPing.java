@@ -2,16 +2,34 @@ package bulkping;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.awt.Color;
 
 public class BulkPing {
 
     static BulkPingGUI bulkPingGUI;
     static ArrayList<String> ipAddresses;
+    static ArrayList<Boolean> pingStatuses;
 
     public static void main(String[] args) throws Exception {
-        bulkPingGUI = new BulkPingGUI();
         updateIPAddressesFromFile("../config/IPAddresses.txt");
+        bulkPingGUI = new BulkPingGUI(ipAddresses);
         bulkPingGUI.openFrame();
+
+        Ping ping = new Ping();
+        while (true){
+            pingStatuses = ping.sendPingRequests(ipAddresses);
+            int ipAddressNumber = 0;
+            for (Boolean pingStatus : pingStatuses) {
+                if(pingStatus){
+                    bulkPingGUI.ipButtons.get(ipAddressNumber).setBackground(new Color(0x59CD90));
+                }
+                else{
+                    bulkPingGUI.ipButtons.get(ipAddressNumber).setBackground(new Color(0xEE6352));
+                }
+                ipAddressNumber++;  
+            }
+            Thread.sleep(10000);
+        }
     }
 
     public static void updateIPAddressesFromFile(String filename){
