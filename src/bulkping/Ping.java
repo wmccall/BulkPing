@@ -30,6 +30,8 @@ class Ping
   }
 
   public ArrayList<Boolean> sendPingRequests(ArrayList<String> ipAddresses){
+    ArrayList<String> localIPAddresses = new ArrayList<String>();
+    localIPAddresses.addAll(ipAddresses);
     ArrayList<Boolean> pingStatuses = new ArrayList<Boolean>();
     for (String ipAddress : ipAddresses) {
       pingStatuses.add(this.sendPingRequest(ipAddress));
