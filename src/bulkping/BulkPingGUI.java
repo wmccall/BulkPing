@@ -41,6 +41,7 @@ public class BulkPingGUI implements ActionListener{
         menuBar.add(menu);
 
         openInformation = new JMenuItem("Information", KeyEvent.VK_I);
+        openInformation.addActionListener(this);
         menu.add(openInformation);
 
         bulkPingFrame.setJMenuBar(menuBar);
@@ -81,8 +82,21 @@ public class BulkPingGUI implements ActionListener{
                 System.out.println("You chose to open this file: " + filename);
                 BulkPing.ipAddresses = Util.readIPAddressesFile(filename);
             }
+        }else if(choice.equals("Information")){
+            openInformationScreen();
         }
-     }
+    }
+
+    private void openInformationScreen() {
+        JFrame infoScreen = new JFrame("Information");
+        infoScreen.setLayout(new FlowLayout());
+        JLabel informationLabel = new JLabel("BulkPing Pinging Utility");
+        JLabel copyrightLabel = new JLabel("© 2019 William McCall");
+        infoScreen.add(informationLabel);
+        infoScreen.add(copyrightLabel);
+        infoScreen.setSize(200,100);
+        infoScreen.setVisible(true);
+    }
 
     BulkPingGUI (ArrayList<String> ipAddresses) {
         ipButtons = new ArrayList<JButton>();
