@@ -4,7 +4,7 @@ Mass Pinging GUI Utility
 
 ## Getting Started
 
-1. Download the latest Release jar
+1. Download the [latest Release jar](https://github.com/wmccall/BulkPing/releases/latest)
 2. Place it into the folder of your choice
 3. Create a `IPAddresses.txt` file in the same directory as the release jar file
 3.1 An example of one can be found [here](https://github.com/wmccall/BulkPing/blob/master/config/IPAddresses.txt)
