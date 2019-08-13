@@ -26,13 +26,13 @@ public class Util {
         System.out.println(
             "Unable to open file '" + 
             fileName + "'");
-        return null;              
+        return new ArrayList<String>();              
     }
     catch(IOException ex) {
         System.out.println(
             "Error reading file '" 
             + fileName + "'");
-        return null;
+        return new ArrayList<String>();
     }
     try{
         bufferedReader.close(); 

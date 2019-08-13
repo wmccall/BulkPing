@@ -14,7 +14,7 @@ public class BulkPing {
         Ping ping = new Ping();
         ArrayList<String> lastIPAddresses = new ArrayList<String>();
 
-        updateIPAddressesFromFile("../config/IPAddresses.txt");
+        updateIPAddressesFromFile("IPAddresses.txt");
         bulkPingGUI = new BulkPingGUI(ipAddresses);
         bulkPingGUI.openFrame();
         lastIPAddresses.addAll(ipAddresses);
