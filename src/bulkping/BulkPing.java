@@ -21,7 +21,7 @@ public class BulkPing {
 
         while(true){
             if (!lastIPAddresses.equals(ipAddresses)){
-                System.out.println("Updating IPs");
+                Util.logWithTime("Updating IPs", "n");
                 bulkPingGUI.updateFrame(ipAddresses);
             }
 

@@ -10,15 +10,15 @@ class Ping
   {
     try{
       InetAddress connection = InetAddress.getByName(ipAddress); 
-      System.out.println("Sending Ping Request to " + ipAddress); 
+      Util.logWithTime("Sending Ping Request to " + ipAddress, "n"); 
       if (connection.isReachable(1500)) 
       {
-        System.out.println("Host is reachable"); 
+        Util.logWithTime(ipAddress + " is reachable", "gp"); 
         return true;
       }
       else
       {
-        System.out.println("Host is unavailable"); 
+        Util.logWithTime(ipAddress + " is unreachable", "bp"); 
         return false;
       }
     }catch(UnknownHostException e){

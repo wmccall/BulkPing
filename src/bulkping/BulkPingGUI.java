@@ -79,7 +79,7 @@ public class BulkPingGUI implements ActionListener{
             int returnVal = chooser.showOpenDialog(bulkPingFrame);
             if(returnVal == JFileChooser.APPROVE_OPTION) {
                 String filename = chooser.getSelectedFile().getAbsolutePath();
-                System.out.println("You chose to open this file: " + filename);
+                Util.logWithTime("Using Config: " + filename, "n");
                 BulkPing.ipAddresses = Util.readIPAddressesFile(filename);
             }
         }else if(choice.equals("Information")){
