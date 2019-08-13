@@ -91,10 +91,10 @@ public class BulkPingGUI implements ActionListener{
         JFrame infoScreen = new JFrame("Information");
         infoScreen.setLayout(new FlowLayout());
         JLabel informationLabel = new JLabel("BulkPing Pinging Utility");
-        JLabel copyrightLabel = new JLabel("© 2019 William McCall");
+        JLabel copyrightLabel = new JLabel("Developer - William McCall - 2019");
         infoScreen.add(informationLabel);
         infoScreen.add(copyrightLabel);
-        infoScreen.setSize(200,100);
+        infoScreen.setSize(300,75);
         infoScreen.setVisible(true);
     }
 
