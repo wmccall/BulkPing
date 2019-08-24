@@ -64,7 +64,9 @@ public class BulkPingGUI implements ActionListener{
         ipButtons = new ArrayList<JButton>();
 
         for (String ipAddress : ipAddresses) {
-            ipButtons.add(new JButton(ipAddress));
+            JButton btn = new JButton(ipAddress);
+            btn.setPreferredSize(new Dimension(200, 25));
+            ipButtons.add(btn);
             localPanel.add(ipButtons.get(ipButtons.size()-1));
         }
         bulkPingFrame.remove(this.panel);

@@ -23,6 +23,7 @@ public class BulkPing {
             if (!lastIPAddresses.equals(ipAddresses)){
                 Util.logWithTime("Updating IPs", "n");
                 bulkPingGUI.updateFrame(ipAddresses);
+                lastIPAddresses.addAll(ipAddresses);
             }
 
             pingStatuses = ping.sendPingRequests(ipAddresses);
