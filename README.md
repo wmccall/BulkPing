@@ -10,6 +10,7 @@ Mass Pinging GUI Utility
 3.1 An example of one can be found [here](https://github.com/wmccall/BulkPing/blob/master/config/IPAddresses.txt)
 4. Run the program by executing `java -jar BulkPing.jar`
 4.1 Alternatively create a `run.batch` or `run.sh` file containing the command to simplify the process
+4.2 Ensure a `pause` command is at the end of the file to prevent the program from closing immediately after running
 
 ## Usage
 
